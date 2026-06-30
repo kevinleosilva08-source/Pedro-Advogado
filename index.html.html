@@ -359,7 +359,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 22px;
+    margin: 0 auto 22px;
     transition: transform 0.3s cubic-bezier(.34,1.5,.64,1);
   }
   .card-icon svg { width: 26px; height: 26px; color: var(--gold); fill: none; stroke: currentColor; stroke-width: 1.8; }
@@ -396,9 +396,10 @@
     width: 100%;
     border-radius: 20px;
     object-fit: cover;
+    object-position: center top;
     display: block;
-    background: var(--bordo);
     min-height: 480px;
+    background: linear-gradient(160deg, var(--bordo-dark) 0%, #6b1222 40%, #8a6b1a 100%);
   }
   .sobre-img-placeholder {
     width: 100%;
@@ -582,8 +583,27 @@
     margin-bottom: 14px;
   }
   .footer-col ul li svg { width: 18px; height: 18px; flex-shrink: 0; fill: none; stroke: var(--gold); stroke-width: 1.8; }
-  .footer-col ul li a { color: inherit; text-decoration: none; }
-  .footer-col ul li a:hover { color: var(--gold-light); }
+  .footer-col ul li a {
+    color: inherit;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 4px 0;
+    transition: color 0.25s ease, transform 0.25s ease, gap 0.25s ease;
+  }
+  .footer-col ul li a:hover {
+    color: var(--gold-light);
+    transform: translateX(4px);
+    gap: 16px;
+  }
+  .footer-col ul li a svg {
+    transition: transform 0.3s cubic-bezier(.34,1.5,.64,1), stroke 0.25s ease;
+  }
+  .footer-col ul li a:hover svg {
+    transform: scale(1.15) rotate(-6deg);
+    stroke: var(--gold-light);
+  }
 
   .footer-bottom {
     text-align: center;
@@ -719,7 +739,7 @@
 
     <div class="card reveal">
       <div class="card-icon">
-        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="15" stroke-linecap="round"/><circle cx="12" cy="19" r="1" fill="currentColor" stroke="none"/></svg>
       </div>
       <h3>Cobrança de Atrasados</h3>
       <p>Recupere valores não pagos e garanta que a justiça seja feita contra o descumprimento do dever legal.</p>
@@ -810,13 +830,13 @@
       <h4>Contato</h4>
       <ul>
         <li>
-          <a href="https://mail.google.com/mail/?view=cm&to=pedroalmeidacosta.advocacia@gmail.com&su=Contato%20via%20site" target="_blank" style="display:flex;align-items:center;gap:12px;color:inherit;text-decoration:none;" title="Enviar e-mail pelo Gmail">
+          <a href="https://mail.google.com/mail/?view=cm&to=pedroalmeidacosta.advocacia@gmail.com&su=Contato%20via%20site" target="_blank" title="Enviar e-mail pelo Gmail">
             <svg viewBox="0 0 24 24" style="pointer-events:none;flex-shrink:0;width:18px;height:18px;fill:none;stroke:var(--gold);stroke-width:1.8;"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
             pedroalmeidacosta.advocacia@gmail.com
           </a>
         </li>
         <li>
-          <a href="https://instagram.com/pedroalmeida_costa" target="_blank" style="display:flex;align-items:center;gap:12px;color:inherit;text-decoration:none;" title="Ver Instagram">
+          <a href="https://instagram.com/pedroalmeida_costa" target="_blank" title="Ver Instagram">
             <svg viewBox="0 0 24 24" style="pointer-events:none;flex-shrink:0;width:18px;height:18px;fill:none;stroke:var(--gold);stroke-width:1.8;"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
             @pedroalmeida_costa
           </a>
